@@ -17,8 +17,7 @@ install_brew() {
 
 create_dirs() {
     declare -a dirs=(
-        "$HOME/Downloads/torrents"
-        "$HOME/Desktop/screenshots"
+        "$HOME/Pictures/screenshots"
         "$HOME/dev"
     )
 
@@ -41,11 +40,11 @@ build_xcode() {
     fi
 }
 
-install_app_store_apps() {
-    mas install 497799835 # Xcode
-    mas install 1195076754 # Pikka
-    mas install  506189836 # Harvest
-}
+# install_app_store_apps() {
+#     mas install 497799835 # Xcode
+#     mas install 1195076754 # Pikka
+#     mas install  506189836 # Harvest
+# }
 
 printf "🗄  Creating directories\n"
 create_dirs
@@ -56,8 +55,8 @@ build_xcode
 printf "🍺  Installing Homebrew packages\n"
 install_brew
 
-printf "🛍️  Installing Mac App Store apps\n"
-install_app_store_apps
+# printf "🛍️  Installing Mac App Store apps\n"
+# install_app_store_apps
 
 printf "💻  Set macOS preferences\n"
 ./macos/.macos
@@ -83,9 +82,9 @@ conda config --set auto_activate_base false
 printf "🌈  Installing colorls\n"
 sudo gem install colorls 1>/dev/null
 
-printf "👽  Installing vim-plug\n"
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# printf "👽  Installing vim-plug\n"
+# curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+#     	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 printf "🐗  Stow dotfiles\n"
 stow alacritty colorls fzf git nvim skhd starship tmux vim yabai z zsh
